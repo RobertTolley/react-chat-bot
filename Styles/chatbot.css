@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  font-family: system-ui, sans-serif;
+}
+
+.chat-input-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.chat-input {
+  border-radius: 10px;
+  width: 450px;
+  height: 36px;
+  border-width: 1px;
+  padding-left: 10px;
+}
+
+.chat-send-button {
+  color: white;
+  background-color: rgb(25, 135, 84);
+  border-width: 0;
+  border-radius: 10px;
+  width: 67px;
+}
+
+.chatLog {
+  display: flex;
+  flex-direction: column; /* stack messages top → bottom */
+  width: 100%;
+  max-width: 700px;
+  height: 100vh; /* full height of screen */
+  box-sizing: border-box;
+  overflow-y: auto; /* scrolls if content exceeds height */
+}
+
+.userResponse {
+  display: flex;
+  color: #111;
+  line-height: 1.5;
+  width: fit-content;
+  max-width: 80%;
+  align-self: flex-end; /* aligns the div itself inside a parent flex container */
+  align-items: flex-end; /* aligns the content inside this flex container to the bottom */
+  padding-right: 8px; /* optional, adds spacing inside the div */
+  padding-bottom: 10px;
+  
+
+}
+
+.userIcon {
+  height: 40px;
+  margin-left: 10px;
+  border-color: rgba(134, 151, 151, 0.651);
+  border-style: solid;
+  border-radius: 50px;
+  border-width: 1px;
+}
