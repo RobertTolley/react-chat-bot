@@ -87,6 +87,7 @@
               onChange={saveInputText}
               onKeyDown={chatboxKeyboardEvents}
               value={inputText}
+              disabled={isLoading}
             />
             <button onClick={sendMessage} className="chat-send-button">
               Send
