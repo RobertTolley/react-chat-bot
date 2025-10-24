@@ -28,7 +28,7 @@
 
         //sends a message via setChatMessage which is used in ChatMessage component
         async function sendMessage() {
-          const newMessage = [
+          const newMessages = [
             ...chatMessages,
             {
               message: inputText,
@@ -37,7 +37,17 @@
             },
           ];
 
-          setChatMessages(newMessage);
+          setInputText("");
+
+          setChatMessages(newMessages);
+          setChatMessages([
+            ...newMessages,
+            {
+              message: "loading...",
+              sender: "robot",
+              id: crypto.randomUUID(),
+            },
+          ]);
 
           //This is from an external libary
           const response = await Chatbot.getResponseAsync(inputText);
@@ -48,9 +58,9 @@
             id: crypto.randomUUID(),
           };
 
-          setChatMessages([...newMessage, chatbotMessage]);
-
           setInputText("");
+
+          setChatMessages([...newMessages, chatbotMessage]);
         }
 
         function chatboxKeyboardEvents(event) {
