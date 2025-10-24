@@ -53,6 +53,11 @@
           setInputText("");
         }
 
+        function chatboxKeyboardEvents(event) {
+          event.key === "Enter" && sendMessage();
+          event.key === "Escape" && setInputText("");
+        }
+
         return (
           <div className="chat-input-container">
             <input
@@ -61,6 +66,7 @@
               placeholder="Send a nessage to Chatbot"
               size="30"
               onChange={saveInputText}
+              onKeyDown={chatboxKeyboardEvents}
               value={inputText}
             />
             <button onClick={sendMessage} className="chat-send-button">
