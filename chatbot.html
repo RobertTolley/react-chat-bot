@@ -20,6 +20,7 @@
       function ChatInput({ chatMessages, setChatMessages }) {
         //the text the user has typed
         const [inputText, setInputText] = React.useState("");
+        const [isLoading, setIsLoading] = React.useState(false);
 
         //saves the words typed in the input element into a variable
         function saveInputText(event) {
@@ -28,6 +29,12 @@
 
         //sends a message via setChatMessage which is used in ChatMessage component
         async function sendMessage() {
+          if (isLoading || inputText === "") {
+            return;
+          }
+
+          setIsLoading(true);
+
           const newMessages = [
             ...chatMessages,
             {
@@ -61,6 +68,8 @@
           setInputText("");
 
           setChatMessages([...newMessages, chatbotMessage]);
+
+          setIsLoading(false);
         }
 
         function chatboxKeyboardEvents(event) {
