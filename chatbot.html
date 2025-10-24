@@ -27,7 +27,7 @@
         }
 
         //sends a message via setChatMessage which is used in ChatMessage component
-        function sendMessage() {
+        async function sendMessage() {
           const newMessage = [
             ...chatMessages,
             {
@@ -40,7 +40,7 @@
           setChatMessages(newMessage);
 
           //This is from an external libary
-          const response = Chatbot.getResponse(inputText);
+          const response = await Chatbot.getResponseAsync(inputText);
 
           const chatbotMessage = {
             message: response,
