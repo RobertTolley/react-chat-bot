@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="English">
+<html lang="En">
   <head>
     <title>chatbot</title>
   </head>
@@ -83,7 +83,6 @@
               className="chat-input"
               type="text"
               placeholder="Send a nessage to Chatbot"
-              size="30"
               onChange={saveInputText}
               onKeyDown={chatboxKeyboardEvents}
               value={inputText}
@@ -99,20 +98,22 @@
       function ChatMessage({ message, sender }) {
         return (
           <>
-            <div className="userResponse">
+            <div
+              className={sender === "user" ? "user-response" : "robot-response"}
+            >
               {sender === "robot" && (
                 <img
-                  className="userIcon"
+                  className="user-icon"
                   src="./images/robot.png"
                   alt="profile-picture"
                 />
               )}
 
-              <div className="useText">{message}</div>
+              <div className="chat-text">{message}</div>
 
               {sender === "user" && (
                 <img
-                  className="userIcon"
+                  className="user-icon"
                   src="./images/user.png"
                   alt="profile-picture"
                 />
@@ -126,7 +127,7 @@
         //Looping through messages into seperate componenets
         return (
           <>
-            <div className="chatLog">
+            <div className="chat-log">
               {chatMessages.map((chatMessage) => {
                 return (
                   <ChatMessage
@@ -147,11 +148,11 @@
 
         return (
           <>
+            <ChatMessages chatMessages={chatMessages} />
             <ChatInput
               chatMessages={chatMessages}
               setChatMessages={setChatMessages}
             />
-            <ChatMessages chatMessages={chatMessages} />
           </>
         );
       }
