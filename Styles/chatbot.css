@@ -39,7 +39,8 @@ body {
   background-color: rgb(25, 135, 84);
   border-width: 0;
   border-radius: 10px;
-  width: 67px;
+  height: 45px;
+  width: 70px;
   cursor: pointer;
 }
 
