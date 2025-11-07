@@ -51,6 +51,8 @@ body {
   width: 100%;
   box-sizing: border-box;
   overflow-y: auto; /* scrolls if content exceeds height */
+  scrollbar-width: 1px;
+  margin-top: 20px;
 }
 
 .user-response {

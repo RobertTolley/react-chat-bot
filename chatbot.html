@@ -124,10 +124,18 @@
       }
 
       function ChatMessages({ chatMessages }) {
+        const chatLogRef = React.useRef(null);
+        React.useEffect(() => {
+          const containerElem = chatLogRef.current;
+          if (containerElem) {
+            containerElem.scrollTop = containerElem.scrollHeight;
+          }
+        }, [chatMessages]);
+
         //Looping through messages into seperate componenets
         return (
           <>
-            <div className="chat-log">
+            <div className="chat-log" ref={chatLogRef}>
               {chatMessages.map((chatMessage) => {
                 return (
                   <ChatMessage
