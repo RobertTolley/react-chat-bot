@@ -123,8 +123,19 @@
         );
       }
 
+      function DefaultChatMessage() {
+        return (
+          <p onClick>
+            Welcome to the chatbot project! Send a message using the textbox
+            below.
+          </p>
+        );
+      }
+
       function ChatMessages({ chatMessages }) {
+        const displayedText = DefaultChatMessage();
         const chatLogRef = React.useRef(null);
+
         React.useEffect(() => {
           const containerElem = chatLogRef.current;
           if (containerElem) {
@@ -150,16 +161,47 @@
         );
       }
 
+      function MoveChatbox({ setTextboxPosition, textboxPosition }) {
+        function changePosition() {
+          setTextboxPosition(!textboxPosition);
+        }
+
+        return (
+          <p className="move-chatbox-line" onClick={changePosition}>
+            Move textbox to top
+          </p>
+        );
+      }
+
       function App() {
         //Higher state to save the users messages
         const [chatMessages, setChatMessages] = React.useState([]);
+        const [textboxPosition, setTextboxPosition] = React.useState(true);
 
         return (
           <>
+            {textboxPosition === true && (
+              <ChatInput
+                chatMessages={chatMessages}
+                setChatMessages={setChatMessages}
+              />
+            )}
+            {chatMessages.length === 0 && (
+              <p className="welcome-message">
+                Welcome to the chatbot project! Send a message using the textbox
+                below.
+              </p>
+            )}
             <ChatMessages chatMessages={chatMessages} />
-            <ChatInput
-              chatMessages={chatMessages}
-              setChatMessages={setChatMessages}
+            {textboxPosition === false && (
+              <ChatInput
+                chatMessages={chatMessages}
+                setChatMessages={setChatMessages}
+              />
+            )}
+            <MoveChatbox
+              textboxPosition={textboxPosition}
+              setTextboxPosition={setTextboxPosition}
             />
           </>
         );

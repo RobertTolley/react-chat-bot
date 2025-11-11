@@ -2,7 +2,7 @@ body {
   margin: 0;
   display: flex;
   justify-content: center; /* center horizontally */
-  font-family: system-ui, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
 }
 
@@ -89,4 +89,20 @@ body {
   overflow-wrap: break-word;
   word-break: break-word;
   white-space: inherit;
+}
+
+.welcome-message {
+  color: gray;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.move-chatbox-line {
+  display: flex;
+  align-self: center;
+  text-align: center;
+  cursor: pointer;
+  color: green;
+  text-decoration: underline;
 }
