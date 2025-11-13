@@ -16,6 +16,19 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
 
     <script type="text/babel">
+      function useAutoScroll(dependencies) {
+        const ref = React.useRef(null);
+
+        React.useEffect(() => {
+          const containerElem = ref.current;
+          if (containerElem) {
+            containerElem.scrollTop = containerElem.scrollHeight;
+          }
+        }, [dependencies]);
+
+        return ref;
+      }
+
       //Taking in props from app
       function ChatInput({ chatMessages, setChatMessages }) {
         //the text the user has typed
@@ -140,14 +153,8 @@
 
       function ChatMessages({ chatMessages }) {
         const displayedText = DefaultChatMessage();
-        const chatLogRef = React.useRef(null);
 
-        React.useEffect(() => {
-          const containerElem = chatLogRef.current;
-          if (containerElem) {
-            containerElem.scrollTop = containerElem.scrollHeight;
-          }
-        }, [chatMessages]);
+        const chatLogRef = useAutoScroll(chatMessages);
 
         //Looping through messages into seperate componenets
         return (
