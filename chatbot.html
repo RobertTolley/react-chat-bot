@@ -50,7 +50,13 @@
           setChatMessages([
             ...newMessages,
             {
-              message: "loading...",
+              message: (
+                <img
+                  className="loading-spinner"
+                  src="./images/loading-spinner.gif"
+                  alt="loading-spinner"
+                />
+              ),
               sender: "robot",
               id: crypto.randomUUID(),
             },
