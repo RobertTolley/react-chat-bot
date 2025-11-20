@@ -1,0 +1,32 @@
+.js-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 99vh;
+
+  max-width: 600px;
+  min-width: 400px;
+  width: 100%;
+  margin: 0px 10px;
+}
+
+@media (min-width: 600px) {
+  .js-container {
+    width: 600px;
+  }
+}
+
+.welcome-message {
+  color: gray;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.move-chatbox-line {
+  align-self: center;
+  text-align: center;
+  cursor: pointer;
+  color: green;
+  text-decoration: underline;
+}

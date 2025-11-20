@@ -1,0 +1,14 @@
+.chat-log {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column; /* stack messages top → bottom */
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto; /* scrolls if content exceeds height */
+  scrollbar-width: 1px;
+  margin-top: 20px;
+  min-height: 200px; /* adjust as needed */
+
+  width: 100%; /* ensures chat log always fills the container */
+  min-width: 0;
+}

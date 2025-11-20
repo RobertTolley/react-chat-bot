@@ -1,0 +1,35 @@
+.robot-response {
+  padding-bottom: 10px;
+  display: flex;
+  gap: 5px;
+  width: 80%;
+}
+
+.user-icon {
+  height: 40px;
+  border-color: rgba(134, 151, 151, 0.651);
+  border-style: solid;
+  border-radius: 50px;
+  border-width: 1px;
+  margin: 0px 5px;
+}
+
+.user-response {
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end; /* aligns the div itself inside a parent flex container */
+  align-items: start; /* aligns the content inside this flex container to the bottom */
+  padding-bottom: 10px;
+  max-width: 70%;
+}
+
+.chat-text {
+  background-color: rgba(236, 236, 236, 0.993);
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  width: 80%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: inherit;
+}

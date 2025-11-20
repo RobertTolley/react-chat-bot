@@ -1,0 +1,31 @@
+.loading-spinner {
+  width: 30px;
+}
+
+.chat-input-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.chat-input {
+  flex-grow: 1;
+  border-radius: 10px;
+  height: 36px;
+  border-width: 1px;
+  padding-left: 10px;
+  position: static;
+}
+
+.chat-send-button {
+  color: white;
+  background-color: rgb(25, 135, 84);
+  border-width: 0;
+  border-radius: 10px;
+  height: 45px;
+  width: 70px;
+  cursor: pointer;
+}
