@@ -1,0 +1,7 @@
+.move-chatbox-line {
+  align-self: center;
+  text-align: center;
+  cursor: pointer;
+  color: green;
+  text-decoration: underline;
+}

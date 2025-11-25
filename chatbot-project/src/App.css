@@ -22,11 +22,3 @@
   text-align: center;
   margin-top: 30px;
 }
-
-.move-chatbox-line {
-  align-self: center;
-  text-align: center;
-  cursor: pointer;
-  color: green;
-  text-decoration: underline;
-}

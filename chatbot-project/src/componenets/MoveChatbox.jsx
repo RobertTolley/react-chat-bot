@@ -1,3 +1,5 @@
+import "./MoveChatbox.css";
+
 function MoveChatbox({ setTextboxPosition, textboxPosition }) {
   function changePosition() {
     setTextboxPosition(!textboxPosition);
