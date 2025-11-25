@@ -12,3 +12,17 @@
   width: 100%; /* ensures chat log always fills the container */
   min-width: 0;
 }
+
+.user-chat-text-time {
+  text-align: right;
+}
+
+.robot-chat-text-time,
+.user-chat-text-time {
+  margin-top: 10px;
+  font-size: 11px;
+}
+
+.user-chat-text-message {
+  text-align: right;
+}

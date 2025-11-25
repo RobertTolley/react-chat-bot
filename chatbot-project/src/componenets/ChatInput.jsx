@@ -2,6 +2,14 @@ import { useState } from "react";
 import { Chatbot } from "supersimpledev";
 import SpinnerLoadingImage from "../assets/loading-spinner.gif";
 import "./ChatInput.css";
+import dayjs from "dayjs";
+
+function getTime() {
+  const currentTime = dayjs().format("h:mm a");
+  console.log(currentTime);
+
+  return currentTime;
+}
 
 //Taking in props from app
 export function ChatInput({ chatMessages, setChatMessages }) {
@@ -28,6 +36,7 @@ export function ChatInput({ chatMessages, setChatMessages }) {
         message: inputText,
         sender: "user",
         id: crypto.randomUUID(),
+        time: getTime(),
       },
     ];
 
@@ -56,6 +65,7 @@ export function ChatInput({ chatMessages, setChatMessages }) {
       message: response,
       sender: "robot",
       id: crypto.randomUUID(),
+      time: getTime(),
     };
 
     setInputText("");
