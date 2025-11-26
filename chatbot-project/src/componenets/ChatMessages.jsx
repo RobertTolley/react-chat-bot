@@ -22,6 +22,7 @@ function ChatMessages({ chatMessages }) {
             message={chatMessage.message}
             sender={chatMessage.sender}
             time={chatMessage.time}
+            type={chatMessage.type}
           />
         );
       })}

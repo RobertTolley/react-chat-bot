@@ -29,3 +29,13 @@
   width: 70px;
   cursor: pointer;
 }
+
+.chat-clear-button {
+  color: rgb(0, 0, 0);
+  background-color: rgb(212, 212, 212);
+  border-width: 0;
+  border-radius: 10px;
+  height: 45px;
+  width: 70px;
+  cursor: pointer;
+}

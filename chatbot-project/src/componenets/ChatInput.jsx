@@ -42,18 +42,12 @@ export function ChatInput({ chatMessages, setChatMessages }) {
 
     setInputText("");
 
-    setChatMessages(newMessages);
     setChatMessages([
       ...newMessages,
       {
-        message: (
-          <img
-            className="loading-spinner"
-            src={SpinnerLoadingImage}
-            alt="loading-spinner"
-          />
-        ),
+        message: "",
         sender: "robot",
+        type: "loading",
         id: crypto.randomUUID(),
       },
     ]);
@@ -80,6 +74,12 @@ export function ChatInput({ chatMessages, setChatMessages }) {
     event.key === "Escape" && setInputText("");
   }
 
+  function clearChat() {
+    localStorage.removeItem("messages");
+    setChatMessages([]);
+    console.log(localStorage.getItem("messages"));
+  }
+
   return (
     <div className="chat-input-container">
       <input
@@ -93,6 +93,9 @@ export function ChatInput({ chatMessages, setChatMessages }) {
       />
       <button onClick={sendMessage} className="chat-send-button">
         Send
+      </button>
+      <button onClick={clearChat} className="chat-clear-button">
+        Clear
       </button>
     </div>
   );
